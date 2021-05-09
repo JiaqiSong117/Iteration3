@@ -71,7 +71,7 @@ function callTweetEmbedDomain(id,callback) {
                         callback.apply(xhr);
                     }
                 } else
-                    alert("Invocation Errors Occured");
+                console.log("Invocation Errors Occured");
             } else
                 console.log("currently the application is at" + invocation.readyState);
         };

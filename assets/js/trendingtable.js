@@ -45,7 +45,7 @@ function handler(evtXHR) {
                 }
             }
         } else
-            alert("Invocation Errors Occured");
+        console.log("Invocation Errors Occured");
     } else
         console.log("currently the aspplication is at" + invocation.readyState);
 }
