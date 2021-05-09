@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Topic</title>
+    <link rel="stylesheet" href="css/semantic.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Almarai">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amarante">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amaranth">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Andika+New+Basic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arima+Madurai">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,800&amp;subset=vietnamese">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/animated-services.css">
+    <link rel="stylesheet" href="assets/css/Article-Clean.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Youtube-Embed.css">
+    <link rel="stylesheet" href="assets/css/smoothproducts.css">
+    <link rel="stylesheet" href="assets/css/Social-Icons.css">
+
+    <style>
+        .ui.loader {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .ui.loader:after, .ui.loader:before {
+            top: 50%;
+        }
+    </style>
+</head>
+
+<body id="trending">
+<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+    <div class="container">
+        <div
+            class="d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center">
+            <img src="assets/img/picture/logo.jpg" width="55" height="55"
+                 style="padding-top: 0px;padding-bottom: 4px;margin-right: 8px;"><a class="navbar-brand logo"
+                                                                                    href="index.html"
+                                                                                    style="font-family: Montserrat, sans-serif;">EYE
+            OPENER</a></div>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+            class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav d-flex justify-content-center align-items-center ml-auto" style="text-align: center;">
+                <li class="nav-item d-flex justify-content-center align-items-center" style="padding-right: 20px;"><a
+                    class="nav-link" href="index.html" style="font-family: Montserrat, sans-serif;">Home</a></li>
+                <li class="nav-item" style="padding-right: 20px;"><a class="nav-link active" href="trending.html"
+                                                                     style="font-family: Montserrat, sans-serif;"><strong>#TOPIC</strong><br></a>
+                </li>
+                <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="research.html"
+                                                                     style="font-family: Montserrat, sans-serif;">RESEARCH</a>
+                </li>
+                <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="recommendation.html">Explore</a>
+                </li>
+                <li class="nav-item" style="padding-right: 20px;"><a
+                    class="nav-link bg-primary border rounded-pill border-primary" href="twitteranalysis.html"
+                    style="font-family: Montserrat, sans-serif;color: #ffffff;padding: 8px;background: rgb(0, 123, 255);">Twitter
+                    analysis</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main id="trending-app" class="page product-page">
+
+
+    <section class="clean-block clean-product dark">
+        <div class="container">
+            <div class="block-heading" style="padding-top: 70px;" >
+                <h2 class="text-info" style="font-family: Amaranth, sans-serif;text-align: center; font-size: 36px;" >#Topic</h2>
+                <p>Want to know about a topic you are curious about? See what the top voices of twitter are saying about it.</p>
+            </div>
+            
+            <div class="block-content" style="text-align: center; ">
+                <div style="text-align: center;"><input id="inp" class="border rounded-0 border-primary" type="text" placeholder="Please input a topic"
+                    v-model="searchVal" 
+                    style="padding-bottom: 3px;padding-top: 1px;padding-right: -3px;padding-left: -2px; margin-top: -10%;">
+                    <button class="btn btn-primary border rounded-0 border-primary" type="button"
+                    @click="search"
+                    style="padding-top: 2px;padding-bottom: 2px;padding-right: 12px;margin-right: 0px;" >Search
+                    </button>
+                </div>
+
+                <img src="assets/img/tbeijing.jpg" style='margin-top: 40px;' id="tb">
+                <div style="text-align: center;">
+                    
+                    <a id='aler' style="color: red;"></a>
+                    <h1 id='heading1' style="font-size: 23px;font-family: Amaranth, sans-serif;margin-top: 20px;"></h1>
+                    <div class="row" id="tweetrow" style="text-align: center;">
+                        <div
+                            class="col"
+                            v-for="(item, index) in tableData"
+                            :key="index"
+                            v-html="item.html"
+                        >
+
+                        </div>
+                    
+                    </div>
+                </div>
+                <div style="text-align: center; display: none;" id='div1'>
+                    <h1 id='heading2' style="font-size: 23px;font-family: Amaranth, sans-serif;"></h1>
+                    <div>
+                        <div style="position: relative;">
+                            <div v-if="loading" id="progress" class="ui right float loader" style="z-index: 1;"></div>
+                            <div id="main" style="width: 100%;height:400px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn btn-primary" type="button" style="margin-top: 31px;" href="twitteranalysis.html">Go To TwitterAnalysis</a>
+            </div>
+        </div>
+    </section>
+</main>
+ <footer class="footer-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Get Start</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="recommendation.html">Explore<br></a></li>
+                        <li></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Feature</h3>
+                    <ul>
+                        <li><a href="twitteranalysis.html">Twitter Analysis</a></li>
+                        <li><a href="trending.html">#Topic</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>EYE OPENER</h3>
+                    <div>
+                        <p style="padding-right: -25px;color: rgb(255,255,255);">An Initiative by Students from Monash University...&nbsp;&nbsp;<br></p>
+                    </div><a href="about-us.html" style="color: #0091ff;">About Us</a>
+                </div>
+                <div class="col item social" style="margin-top: 10px;"><a href="https://twitter.com/atonmuse"><i class="icon ion-social-twitter"></i></a></div>
+            </div>
+            <p class="copyright">FIT5120-MP9-EYEOPENER&nbsp;</p>
+        </div>
+    </footer>
+
+<script src="js/vue.js"></script>
+<script src="js/element.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.1.1/dist/echarts.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/chart.min.js"></script>
+<script src="assets/js/bs-init.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+<script src="assets/js/smoothproducts.min.js"></script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/trendingtable.js"></script>
+<script src="assets/js/tweetrow.js"></script>
+
+
+<script type="text/javascript">
+
+    new Vue({
+        el: '#trending-app',
+        data: {
+            tableData: [],
+            categoryList: [],
+            seriesData: [],
+            searchVal: '',
+            loading: false
+        },
+        created() {
+
+        },
+        methods: {
+            search() {
+                document.getElementById('div1').style.display = '';
+                document.getElementById('aler').innerHTML='';
+                this.loading = true
+                this.seriesData = []
+                this.categoryList = []
+                this.initChart()
+                let val = this.searchVal.trim()
+                document.getElementById('tb').style.display = 'none';
+                axios.get('https://filterbubbleflask.azurewebsites.net/api/tasks/hashtag/'+encodeURIComponent(val)).then(res => {
+                    let tweetList = res.data
+                    if (tweetList.length) {
+                        document.getElementById('heading1').innerHTML='Top Tweets In This Topic';
+                        document.getElementById('heading2').innerHTML='Twitter Analyzes For These Users Who Send Popular Tweets';
+                        let tweetStr = ''
+                        this.tableData = []
+                        tweetList.forEach((tw, twI) => {
+                            tweetStr += (twI + 1) + '=' + tw.Twitter_ID + '&'
+
+                            // 拼
+                            axios.get(
+                                'https://fiterbubblespring.azurewebsites.net/getApi/TweetApi?id=' + tw.Tweet_id
+                            ).then(response => {
+                                this.tableData.push(response.data)
+
+                                var scriptInfoBox = document.createElement("script");
+                                scriptInfoBox.type = "text/javascript";
+                                scriptInfoBox.src =
+                                    "https://platform.twitter.com/widgets.js";
+                                document.body.appendChild(scriptInfoBox);
+                            })
+                        })
+
+                        axios.get('https://filterbubbleflask.azurewebsites.net/api/tasks/CombinedSearch/?' + tweetStr.slice(0, -1)).then(res2 => {
+                            if (res2) {
+                                var result = JSON.parse(res2.data);
+                                console.log(result);
+                                var item15 = [
+                                    "CRIME",
+                                    "HEALTHY LIVING",
+                                    "ENTERTAINMENT",
+                                    "ARTS & CULTURE",
+                                    "STYLE & BEAUTY",
+                                    "PARENTING",
+                                    "POLITICS",
+                                    "SPORTS",
+                                    "BUSINESS",
+                                    "WORLD NEWS",
+                                    "FOOD & DRINK",
+                                    "GREEN",
+                                    "TRAVEL",
+                                    "WELLNESS",
+                                    "QUEER VOICES",
+                                    "RELIGION"
+                                ];
+                                var result1 = [];
+                                for (let i = 0; i < result.length; i++) {
+                                    for (const j of item15) {
+                                        if (j == result[i].category) {
+                                            result1.push(result[i])
+                                        }
+                                    }
+                                }
+                                this.categoryList = result1
+                                this.seriesData = []
+                                this.categoryList.forEach(cItem => {
+                                    let num = 0
+                                    for (const cItemKey in cItem) {
+                                        if (cItemKey !== 'category') {
+                                            num += cItem[cItemKey]
+                                        }
+                                    }
+                                    this.seriesData.push(num)
+                                })
+                                console.log(this.categoryList, 'this.categoryList')
+                                this.initChart()
+                            }
+
+                            this.loading = false
+                        })
+                    } else {
+                        this.loading = false
+                        document.getElementById('aler').innerHTML='The topic does not exist!';
+                        // document.querySelector('input1').value = '';
+                        document.querySelector('inpu').value = '';
+                    }
+                })
+                .catch(err => {
+                        this.loading = false;
+                        document.getElementById('aler').innerHTML=' Please input a valid input!';
+                        // document.querySelector('input1').value = '';
+                        document.querySelector('inpu').value = ' ';
+                        
+                    })
+            },
+            initChart() {
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('main'));
+
+                // 指定图表的配置项和数据
+                var option = {
+                    title: {
+                        text: ''
+                    },
+                    tooltip: {},
+                    legend: {
+                        data: ['']
+                    },
+                    grid:{
+
+                    top:"10%",
+                    bottom:"20%"
+
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: this.categoryList.map(item => item.category),
+                        axisLabel: { interval: 0, rotate: 45 },
+                    },
+                    yAxis: {},
+                    series: [{
+                        name: '',
+                        type: 'bar',
+                        data: this.seriesData
+                    }]
+                };
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+                window.onresize = function () {
+                    myChart.resize();
+                }
+            }
+        }
+    })
+
+
+</script>
+
+
+
+</body>
+
+</html>

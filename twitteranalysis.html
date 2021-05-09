@@ -1,0 +1,230 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Twitter Analytics</title>
+  <link rel="stylesheet" href="css/semantic.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/element.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dela+Gothic+One">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+  <link rel="stylesheet" href="assets/css/animated-services.css">
+  <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
+  <link rel="stylesheet" href="assets/css/Boostrap-Tabs.css">
+  <link rel="stylesheet" href="assets/css/Bootstrap-4---Tabs-with-Arrows.css">
+  <link rel="stylesheet" href="assets/css/Features-Boxed.css">
+  <link rel="stylesheet" href="assets/css/Highlight-Phone.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+  <link rel="stylesheet" href="assets/css/Responsive-Youtube-Embed.css">
+  <link rel="stylesheet" href="assets/css/smoothproducts.css">
+  <style>
+    .text {
+      font-size: 14px;
+    }
+
+    .item {
+      /*padding: 18px 0;*/
+    }
+
+    .box-card {
+      width: auto;
+    }
+    #table, #specNode {
+      line-height: 50px;
+      li
+    }
+
+    #table > div > div {
+      display: flex;
+    }
+    
+    #table > div > div .name {
+      flex: 25;
+    }
+    #table > div > div .url {
+      flex: 75;
+    }
+    #specNode > div {
+      margin-right: 15px;
+      float: left;
+    }
+  </style>
+
+</head>
+
+<body>
+<section style="margin-top: 15px;">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container">
+            <div class="d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center"><img src="assets/img/picture/logo.jpg" width="55" height="55" style="padding-top: 0px;padding-bottom: 4px;margin-right: 8px;"><a class="navbar-brand logo" href="index.html" style="font-family: Montserrat, sans-serif;">EYE OPENER</a></div><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav d-flex justify-content-center align-items-center ml-auto" style="text-align: center;">
+                    <li class="nav-item d-flex justify-content-center align-items-center" style="padding-right: 20px;"><a class="nav-link" href="index.html" style="font-family: Montserrat, sans-serif;">Home</a></li>
+                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="trending.html" style="font-family: Montserrat, sans-serif;"><strong>#TOPIC</strong><br></a></li>
+                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="research.html" style="font-family: Montserrat, sans-serif;">RESEARCH</a></li>
+                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="recommendation.html">Explore</a></li>
+                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link bg-primary border rounded-pill border-primary" href="twitteranalysis.html" style="font-family: Montserrat, sans-serif;color: #ffffff;padding: 8px;background: rgb(0, 123, 255);">Twitter analysis</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <div class="ui grid" style="margin-top: 100px">
+    <div class="three wide column">
+      <div id="person-list" class="ui cards container">
+        <div class="card" >
+          <div class="ui center aligned content">
+            <div class="button">
+              <img src = "assets/img/logo.png" style="height: 60px; width: 60px;">
+            </div>
+            <div class="ui header container">Twitter Analyze</div>
+          </div>
+        </div>
+      </div>
+      <div class="ui cards container">
+        <div class="card">
+          <button id="combine" class="ui orange button center">Combine</button>
+        </div>
+        <div class="card">
+          <button id="cleanAll" class="ui orange button">Clean All</button>
+        </div>
+        <!-- <div class="card">
+
+          <a id="back" class="ui orange button" href="Home.html">Back To Main</a>
+
+        </div> -->
+      </div>
+    </div>
+    <div class="twelve wide column" style="width: 80% !important;">
+      <div class="results-panel-search">
+        <i class="twitter icon big blue"></i>
+        <div class="ui search">
+          <input id="input" style="width: 20rem;" class="prompt"   maxlength="15" type="text" placeholder="Please Input Twitter Handle Name" />
+
+        </div>
+        <button id="search" class="ui primary button">Search</button>
+        <input type="button" value="?" onclick="show();"
+        style="width: 30px; /* 宽度 */
+         height: 30px; /* 高度 */
+         border-width: 1px; /* 边框宽度 */
+         border-radius: 33px; /* 边框半径 */
+         background:#fff; /* 背景颜色 */
+         cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+         outline: none; /* 不显示轮廓线 */
+         font-family: Microsoft YaHei; /* 设置字体 */
+         color: black; /* 字体颜色 */
+         font-weight: 600;
+         font-size: 17px; /* 字体大小 */}>" >
+        <div id="img" style="display:none; position:absolute; left:73%; top:0%; margin:-50px 0 0 -50px; z-index: 1;">
+          <img src="assets/img/how.PNG"/></div>
+        <script>
+          var img=document.getElementById('img');
+          function show(){
+          if(img.style.display=='none'){
+          img.style.display='';
+          }else{
+          img.style.display='none';
+          }
+          }
+
+          </script>
+        <div id="progress" class="ui right float loader" style="z-index: 1;"></div>
+
+
+      </div>
+      <div style="text-align: center;" id='howtouse'>
+      <img  src="./assets/img/tech/howtouse.png"  style="height: 600px;" width="700px "/></div>
+
+      <div style='margin-top: 1%; z-index: 1;' class="results-panel-search">
+        <a id='aler' style="color: red; position:absolute!important; z-index: 1;"></a></div>
+
+      <div id="container" class="results-panel-charts" style="text-align: center;">
+        
+      </div>
+      
+      <div id="app" style="padding: 30px 10px 50px; width: 300%; height: ; display: flex">
+        <el-row style="width: 100%;" :gutter="20">
+          <el-col :span="8">
+            <el-card class="box-card" id="card" style="display:none;">
+              <div slot="header" class="clearfix">
+                <span>Based on the chart, it can be concluded that if you follow selected accounts on Twitter, your news feed may be lacking in these listed categories on the left.</span>
+
+              </div>
+              <el-row>
+                <el-col :span="24">
+                  <div id="specNode"></div>
+                </el-col>
+                <el-col :span="12">
+                  <!-- <div>Based on the chart, it can be concluded that if you follow selected accounts on Twitter, your news feed may be lacking in these listed categories on the left.</div> -->
+                </el-col>
+              </el-row>
+
+            </el-card>
+          </el-col>
+          <el-col :span="16" style="display:none;">
+            <div :gutter="10" style="width: 1000%;">
+              <el-card id="tableData" style="display:none; " class="box-card">
+                <el-row :gutter="40">
+                  <el-col :span="8" class="select">
+                    <select
+                        style="border: 1px solid #333; display:none; width: 100%; height: 30px;"
+                        name="" id="select" onchange="changeSelect()">
+                    </select>
+                    <div style="margin-top: 10px;">
+                    Suggestion:
+                    </div>
+                    <div>
+                        To make your news feed broader, we recommend that you follow these Twitter accounts listed on the right (you can switch between categories from the navigation bar above) to ensure that your news feed is comprehensive.
+                    </div>
+                  </el-col>
+
+                  <el-col :span="16">
+                    <el-row
+                        :gutter="10"
+                        style="margin: 5px 0"
+                    >
+                      <el-col :span="6">Username</el-col>
+                      <el-col :span="18">Link</el-col>
+                    </el-row>
+
+                    <div
+                        id="table"
+                        style="margin: 5px 0"
+                    >
+
+                    </div>
+                  </el-col>
+                </el-row>
+              </el-card>
+        </el-row>
+        </el-col>
+        </el-row>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/element.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/highcharts.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="src/person-service.js"></script>
+<script src="src/store.js"></script>
+<script src="src/charts.js"></script>
+<script src="src/person.js"></script>
+<script src="app.js"></script>
+<script src="assets/js/theme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+<script src="assets/js/smoothproducts.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/bs-init.js"></script>
+
+</html>
